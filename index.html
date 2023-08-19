@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>shibatashijinkoupiramiddo</title>
+<script>
+var r5_4m_man = [1523,1892,2050,2116,2029,2036,2354,2698,3003,3298,3156,2983,3146,3331,3872,2540,1745,1172,508,108,9]
+var r5_4m_woman = [1450,1765,1989,1895,1792,1798,2157,2481,2793,3055,2986,2929,3113,3462,4167,3066,2653,2348,1477,441,77]
+var r4_4m_man = [1582,1933,2098,2114,2069,2132,2388,2794,3067,3342,3130,2999,3194,3432,3974,2262,1787,1193,488,103,13]
+var r4_4m_woman = [1483,1868,1964,1940,1873,1831,2251,2545,2831,3101,2957,2960,3184,3634,4207,2826,2754,2402,1457,413,75]
+var r3_4m_man = [1657,2003,2087,2141,2157,2199,2456,2883,3115,3304,3098,3035,3304,3529,3955,2140,1757,1196,481,83,10]
+var r3_4m_woman = [1535,1946,1960,1997,1887,1990,2304,2616,2887,3163,2872,3019,3289,3762,4141,2785,2761,2398,1403,406,66]
+var r2_4m_man = [1657,2003,2087,2141,2157,2199,2456,2883,3115,3304,3098,3035,3304,3529,3955,2140,1757,1196,481,83,10]
+var r2_4m_woman = [1563,1986,1959,2097,1849,2060,2381,2662,2954,3141,2845,3082,3346,3973,3746,2943,2826,2402,1332,378,62]
+var r1_4m_man = [1800,2025,2099,2247,2297,2331,2640,2973,3236,3194,3073,3085,3465,3994,3215,2278,1812,1138,447,72,6]
+var r1_4m_woman = [1633,1996,1931,2178,1910,2156,2446,2731,3011,3067,2934,3083,3452,4169,3381,3024,2876,2449,1294,393,51]
+var h30_4m_man = [1872,2010,2092,2345,2279,2402,2732,3037,3300,3176,3008,3210,3517,4171,2889,2247,1819,1131,423,73,7]
+var h30_4m_woman = [1735,1996,1952,2187,2004,2216,2544,2798,3093,3018,2941,3142,3526,4289,3212,2945,2967,2499,1224,366,57]
+var h29_4m_man = [1898,2062,2072,2397,2398,2487,2777,3074,3317,3144,3033,3252,3608,4303,2560,2289,1859,1110,386,64,6]
+var h29_4m_woman = [1800,1963,2000,2253,2073,2312,2564,2818,3145,2979,2980,3223,3696,4321,2960,3069,3028,2468,1129,350,52]
+var h28_4m_man = [1925,2048,2107,2393,2513,2612,2825,3099,3251,3096,3063,3399,3704,4277,2445,2242,1846,1116,333,60,5]
+var h28_4m_woman = [1854,1940,2031,2268,2198,2368,2584,2854,3167,2917,3038,3330,3816,4275,2931,3059,3042,2408,1099,300,45]
+function draw(man, woman, year,) {
+    var canvas = document.getElementById('tutorial');
+    //もし変数キャンバスにキャンバス要素が取得出来たら、
+    if (canvas.getContext) {
+        //変数ctxにペンの機能を持たせる。
+        var ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, 470, 345);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgb(0, 0, 0)';
+        ctx.beginPath();
+        ctx.moveTo(35, 184);
+        ctx.lineTo(335, 184);
+        ctx.lineTo(335, 16);
+        ctx.lineTo(35, 16);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+        ctx.beginPath();
+        for (var i = 0; i < 21; i++) {
+            ctx.moveTo(35, 24 + i * 8);
+            ctx.lineTo(335, 24 + i * 8);
+        }
+        ctx.stroke();
+        ctx.globalAlpha = 1.0;
+        ctx.font = '12px sans-serif';
+        nenrei = 10;
+        for (var i = 0; i < 9; i++) {
+            ctx.fillText(nenrei, 17, 171 - i * 16);
+            nenrei = nenrei + 10;
+        }
+        var womanjinkou = 1000;
+        for (var i = 0; i < 4; i++) {
+            ctx.fillText(womanjinkou, 200 + i * 30, 195);
+            womanjinkou = womanjinkou + 1000;
+        }
+        var manjinkou = 1000;
+        for (var i = 0; i < 4; i++) {
+            ctx.fillText(manjinkou, 139 - i * 30, 195);
+            manjinkou = manjinkou + 1000;
+        }   
+        ctx.fillText('0', 25, 187);
+        ctx.fillText('100', 11, 27);
+        ctx.fillText('0', 181, 195);
+        ctx.fillText('(人)', 325, 195);
+        ctx.fillText('(歳)', 12, 12);
+        ctx.fillText('男性', 98, 12);
+        ctx.fillText('女性', 248, 12);
+        ctx.fillText(year+'年4月', 280, 222);
+        ctx.fillText('構成比', 1, 208);
+        ctx.fillText('新発田市人口ピラミッド', 125, 208);
+        ctx.fillText('データ出典 新発田市オープンデータ', 153, 249);
+        ctx.fillText('下のスライダーを動かすと、人口ピラミッドの変化を見られます', 1, 265);
+        var y = 180;
+        var total = 0;
+        var nenshou = 0;
+        var rounen = 0;
+        for (var i = 0; i < 21; i++) {
+            ctx.beginPath();
+            ctx.lineWidth = 8;
+            ctx.strokeStyle = 'rgb(0, 106, 255)';
+            ctx.moveTo(185, y);
+            ctx.lineTo(185 - man[i] * 0.03, y);
+            y = y-8;
+            total = total + man[i];
+            if (i < 3) {
+                nenshou = nenshou + man[i];
+                ctx.strokeStyle = 'rgb(0, 180, 255)';
+            }
+            if (i > 12) {
+                rounen = rounen + man[i];
+                ctx.strokeStyle = 'rgb(0, 0, 255)';
+            }
+            ctx.stroke();
+        }
+        var y = 180;
+        for (var i = 0; i < 21; i++) {
+            ctx.beginPath();
+            ctx.lineWidth = 8;
+            ctx.strokeStyle = 'rgb(255, 106, 0)';
+            ctx.moveTo(185, y);
+            ctx.lineTo(185 + woman[i] * 0.03, y);
+            y = y-8;
+            total = total + woman[i];
+            if (i < 3) {
+                nenshou = nenshou + woman[i];
+                ctx.strokeStyle = 'rgb(255, 180, 0)';
+            }
+            if (i > 12) {
+                rounen = rounen + woman[i];
+                ctx.strokeStyle = 'rgb(255, 0, 0)';
+            }
+            ctx.stroke();
+        }
+        var y = 184;
+        ctx.strokeStyle = 'rgb(0, 0, 0)';
+        ctx.lineWidth = 1;
+        for (var i = 0; i < 22; i++) {
+            ctx.strokeRect(185, y, - man[i] * 0.03, - 8);
+            ctx.strokeRect(185, y, woman[i] * 0.03, - 8);
+            y = y - 8;
+        }
+        ctx.globalAlpha = 0.5;
+        for (var x = 1; x < 10; x++) {
+            ctx.beginPath();
+            ctx.moveTo(35 + x * 30, 184);
+            ctx.lineTo(35 + x * 30, 16);
+            ctx.closePath();
+            ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+        nenshouhiritu = Math.floor(nenshou / total * 10000) / 100;
+        rounenhiritu = Math.floor(rounen / total * 10000) / 100;
+        ctx.fillText('年少人口(0歳~14歳)', 1, 237);
+        ctx.fillText(nenshouhiritu+'%', 120, 237);
+        ctx.fillText('老年人口(65歳~)', 1, 222);
+        ctx.fillText(+rounenhiritu+'%', 120, 222);
+    }
+}
+function inputChange(value){
+    if (value == 2022) {
+        draw(r4_4m_man, r4_4m_woman, 2022)
+    }
+    if (value == 2023) {
+        draw(r5_4m_man, r5_4m_woman, 2023)
+    }
+    if (value == 2021) {
+        draw(r3_4m_man, r3_4m_woman, 2021)
+    }
+    if (value == 2020) {
+        draw(r2_4m_man, r2_4m_woman, 2020)
+    }
+    if (value == 2019) {
+        draw(r1_4m_man, r1_4m_woman, 2019)
+    }
+    if (value == 2018) {
+        draw(h30_4m_man, h30_4m_woman, 2018)
+    }
+    if (value == 2017) {
+        draw(h29_4m_man, h29_4m_woman, 2017)
+    }
+    if (value == 2016) {
+        draw(h28_4m_man, h28_4m_woman,2016)
+    }
+}
+</script>
+<style>
+/*境界線を1pxの黒の実線で塗る*/
+canvas { border: 1px solid black; }
+input[type="range"] {
+  width: 350px;
+  margin: 0;
+}
+</style>
+</head>
+<body onload="draw(r5_4m_man, r5_4m_woman, 2023);">
+<canvas id="tutorial" width="350" height="280"></canvas><br>
+<input type="range" min="2016" max="2023" step="1" id="slider" value="2023" onchange="inputChange(this.value)">
+</body>
+</html>
