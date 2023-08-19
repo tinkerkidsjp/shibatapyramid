@@ -51,15 +51,15 @@ function draw(man, woman, year,) {
             ctx.fillText(nenrei, 17, 171 - i * 16);
             nenrei = nenrei + 10;
         }
-        var womanjinkou = 1000;
-        for (var i = 0; i < 4; i++) {
-            ctx.fillText(womanjinkou, 200 + i * 30, 195);
-            womanjinkou = womanjinkou + 1000;
+        var womanjinkou = 2000;
+        for (var i = 0; i < 2; i++) {
+            ctx.fillText(womanjinkou, 230 + i * 60, 195);
+            womanjinkou = womanjinkou + 2000;
         }
-        var manjinkou = 1000;
-        for (var i = 0; i < 4; i++) {
-            ctx.fillText(manjinkou, 139 - i * 30, 195);
-            manjinkou = manjinkou + 1000;
+        var manjinkou = 2000;
+        for (var i = 0; i < 2; i++) {
+            ctx.fillText(manjinkou, 109 - i * 60, 195);
+            manjinkou = manjinkou + 2000;
         }   
         ctx.fillText('0', 25, 187);
         ctx.fillText('100', 11, 27);
@@ -70,7 +70,7 @@ function draw(man, woman, year,) {
         ctx.fillText('女性', 248, 12);
         ctx.fillText(year+'年4月', 280, 222);
         ctx.fillText('構成比', 1, 208);
-        ctx.fillText('新発田市人口ピラミッド', 125, 208);
+        ctx.fillText('新発田市人口ピラミッド 2016~2023年', 74, 208);
         ctx.fillText('データ出典 新発田市オープンデータ', 153, 249);
         ctx.fillText('下のスライダーを動かすと、人口ピラミッドの変化を見られます', 1, 265);
         var y = 180;
@@ -117,7 +117,7 @@ function draw(man, woman, year,) {
         var y = 184;
         ctx.strokeStyle = 'rgb(0, 0, 0)';
         ctx.lineWidth = 1;
-        for (var i = 0; i < 22; i++) {
+        for (var i = 0; i < 21; i++) {
             ctx.strokeRect(185, y, - man[i] * 0.03, - 8);
             ctx.strokeRect(185, y, woman[i] * 0.03, - 8);
             y = y - 8;
